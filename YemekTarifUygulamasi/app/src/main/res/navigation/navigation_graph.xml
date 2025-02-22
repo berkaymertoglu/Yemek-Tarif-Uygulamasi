@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/listeFragment">
+
+    <fragment
+        android:id="@+id/listeFragment"
+        android:name="com.berkaymertoglu.yemektarifuygulamasi.view.ListeFragment"
+        android:label="fragment_liste"
+        tools:layout="@layout/fragment_liste" >
+        <action
+            android:id="@+id/action_listeFragment_to_tarifFragment"
+            app:destination="@id/tarifFragment" />
+        <action
+            android:id="@+id/action_listeFragment_to_favorilerFragment"
+            app:destination="@id/favorilerFragment" />
+        <action
+            android:id="@+id/action_listeFragment_to_yemekTarifleriFragment"
+            app:destination="@id/yemekTarifleriFragment" />
+        <action
+            android:id="@+id/action_listeFragment_to_yakindakiMarketlerFragment"
+            app:destination="@id/yakindakiMarketlerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tarifFragment"
+        android:name="com.berkaymertoglu.yemektarifuygulamasi.view.TarifFragment"
+        android:label="fragment_tarif"
+        tools:layout="@layout/fragment_tarif" >
+        <argument
+            android:name="bilgi"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_tarifFragment_to_listeFragment"
+            app:destination="@id/listeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favorilerFragment"
+        android:name="com.berkaymertoglu.yemektarifuygulamasi.view.FavorilerFragment"
+        android:label="Favoriler"
+        tools:layout="@layout/fragment_favoriler" >
+        <action
+            android:id="@+id/action_favorilerFragment_to_listeFragment"
+            app:destination="@id/listeFragment" />
+
+        <action
+            android:id="@+id/action_favorilerFragment_to_tarifFragment"
+            app:destination="@id/tarifFragment" />
+        <action
+            android:id="@+id/action_favorilerFragment_to_tarifDetayFragment"
+            app:destination="@id/tarifDetayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/yemekTarifleriFragment"
+        android:name="com.berkaymertoglu.yemektarifuygulamasi.view.YemekTarifleriFragment"
+        android:label="fragment_yemek_tarifleri"
+        tools:layout="@layout/fragment_yemek_tarifleri" >
+        <action
+            android:id="@+id/action_yemekTarifleriFragment_to_recipeDetailFragment"
+            app:destination="@id/recipeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/yakindakiMarketlerFragment"
+        android:name="com.berkaymertoglu.yemektarifuygulamasi.view.YakindakiMarketlerFragment"
+        android:label="YakindakiMarketlerFragment" />
+    <fragment
+        android:id="@+id/recipeDetailFragment"
+        android:name="com.berkaymertoglu.yemektarifuygulamasi.ui.RecipeDetailFragment"
+        android:label="fragment_recipe_detail"
+        tools:layout="@layout/fragment_recipe_detail" />
+    <fragment
+        android:id="@+id/tarifDetayFragment"
+        android:name="com.berkaymertoglu.yemektarifuygulamasi.view.TarifDetayFragment"
+        android:label="fragment_tarif_detay"
+        tools:layout="@layout/fragment_tarif_detay">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+
+
+</navigation>

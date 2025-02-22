@@ -1,0 +1,88 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.TarifDetayFragment">
+
+    <!-- Tarif Başlığı -->
+    <TextView
+        android:id="@+id/tarifBaslikTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Tarif Başlığı"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Tarif Resmi -->
+    <ImageView
+        android:id="@+id/tarifResimImageView"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="Tarif Resmi"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tarifBaslikTextView"
+        android:layout_margin="16dp"/>
+
+    <!-- Malzemeler Başlığı -->
+    <TextView
+        android:id="@+id/malzemelerTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Malzemeler"
+        android:textSize="25sp"
+        android:padding="16dp"
+        android:textColor="#FF0000"
+        android:lineSpacingExtra="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tarifResimImageView"/>
+
+    <!-- Malzemeler İçeriği -->
+    <TextView
+        android:id="@+id/malzemelerContentTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Malzeme 1, Malzeme 2, Malzeme 3"
+        android:textSize="18sp"
+        android:textColor="#8B8B8B"
+        android:padding="16dp"
+        android:lineSpacingExtra="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/malzemelerTextView"/>
+
+    <Button
+        android:id="@+id/favorilerdenCikarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Favorilerden Çıkar"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:onClick="favorilerdenCikar" />
+
+    <!-- RecyclerView Favoriler Listesi -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewFavoriler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/malzemelerContentTextView"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
